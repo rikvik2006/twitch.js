@@ -1,0 +1,11 @@
+# Node js
+/node_modules
+
+# Env
+.env
+
+# Build
+/dist
+
+# Test Code
+/src/test
