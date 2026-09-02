@@ -1,10 +1,10 @@
 import type z from "zod";
 import type {
     TwitchBaseMetadataSchema,
-    TwitchSubscriptionMetadataSchema,
+    TwitchBaseSubscriptionMetadataSchema,
 } from "../schema/twitch/TwitchMetadata.js";
 
 export type TwitchBaseMetadata = z.infer<typeof TwitchBaseMetadataSchema>;
-export type TwitchSubscriptionMetadata = z.infer<
-    typeof TwitchSubscriptionMetadataSchema
+export type TwitchBaseSubscriptionMetadata = z.infer<
+    typeof TwitchBaseSubscriptionMetadataSchema
 >;

@@ -18,12 +18,11 @@ export const TwitchBaseMetadataSchema = z.object({
 /**
  * Metadata object for event related message
  */
-export const TwitchSubscriptionMetadataSchema = TwitchBaseMetadataSchema.extend(
-    {
+export const TwitchBaseSubscriptionMetadataSchema =
+    TwitchBaseMetadataSchema.extend({
         subscription_type: z.string(),
         subscription_version: z.string(),
-    },
-);
+    });
 
 /**
  * Metadata used in Welcome message
@@ -49,7 +48,7 @@ export const TwitchKeepaliveMetadataSchema = TwitchBaseMetadataSchema.extend({
  * @see Documentation: https://dev.twitch.tv/docs/eventsub/websocket-reference#notification-message
  */
 export const TwitchNotificationMetadataSchema =
-    TwitchSubscriptionMetadataSchema.extend({
+    TwitchBaseSubscriptionMetadataSchema.extend({
         message_type: z.literal("notification"),
     });
 
@@ -68,6 +67,6 @@ export const TwitchReconnectMetadataSchema = TwitchBaseMetadataSchema.extend({
  * @see Documentation: https://dev.twitch.tv/docs/eventsub/websocket-reference#revocation-message
  */
 export const TwitchRevocationMetadataSchema =
-    TwitchSubscriptionMetadataSchema.extend({
+    TwitchBaseSubscriptionMetadataSchema.extend({
         message_type: z.literal("revocation"),
     });
